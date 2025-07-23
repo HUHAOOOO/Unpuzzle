@@ -14,14 +14,19 @@ public class MoveForward : CoreMonoBehaviour
     {
         LoadCubeCtrl();
     }
-
-
     protected virtual void LoadCubeCtrl()
     {
         if (this.cubeCtrl != null) return;
         cubeCtrl = transform.parent.GetComponent<CubeCtrl>();
         Debug.LogWarning(transform.name + ": LoadCubeCtrl", gameObject);
     }
+
+
+    protected override void OnDisable()
+    {
+        isCanMove = false;
+    }
+
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.W))
@@ -29,7 +34,7 @@ public class MoveForward : CoreMonoBehaviour
         //    isCanMove = true;
         //}
 
-        if (IsCanMove)
+        if (isCanMove)
         {
             Move();
         }

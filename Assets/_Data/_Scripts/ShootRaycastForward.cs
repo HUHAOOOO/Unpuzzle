@@ -45,12 +45,12 @@ public class ShootRaycastForward : CoreMonoBehaviour
 
         if (Physics.Raycast(ray, out hit, rayDistance))
         {
-            Debug.Log("Hit: " + hit.collider.gameObject.transform.parent.name, gameObject); // Destroy(hit.collider.gameObject)
+            //Debug.Log("Hit: " + hit.collider.gameObject.transform.parent.name, gameObject);
             cubeCtrl.MoveForward.IsCanMove = false;
         }
         else
         {
-            Debug.Log("No hit > can MoveForward", gameObject);
+            //Debug.Log("No hit > can MoveForward", gameObject);
             cubeCtrl.MoveForward.IsCanMove = true;
         }
         Debug.DrawRay(ShootPoint.position, transform.forward * rayDistance, Color.red, 5f);
@@ -68,12 +68,12 @@ public class ShootRaycastForward : CoreMonoBehaviour
 
         if (Physics.Raycast(ray, out hit, rayDistance))
         {
-            Debug.Log("STOP | Hit: " + hit.collider.gameObject.transform.parent.name, gameObject); // Destroy(hit.collider.gameObject)
+            //Debug.Log("STOP | Hit: " + hit.collider.gameObject.transform.parent.name, gameObject);
             cubeCtrl.MoveForward.IsCanMove = false;
         }
         else
         {
-            Debug.Log("No hit > still can MoveForward", gameObject);
+            //Debug.Log("No hit > still can MoveForward", gameObject);
         }
     }
 }
