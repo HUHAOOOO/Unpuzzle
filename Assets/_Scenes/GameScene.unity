@@ -613,14 +613,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube_Right
       objectReference: {fileID: 0}
-    - target: {fileID: 6359553888948511259, guid: a5855a5a873f17e429113926002d26a6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831026199144708145, guid: a5855a5a873f17e429113926002d26a6, type: 3}
-      propertyPath: mainCam
-      value: 
-      objectReference: {fileID: 963194228}
     - target: {fileID: 8284217571948583921, guid: a5855a5a873f17e429113926002d26a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1036,14 +1028,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube_Left
       objectReference: {fileID: 0}
-    - target: {fileID: 1739385824008635172, guid: c3a6188ce52947e4a9f9acfb16f50e00, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4052838533324555645, guid: c3a6188ce52947e4a9f9acfb16f50e00, type: 3}
-      propertyPath: mainCam
-      value: 
-      objectReference: {fileID: 963194228}
     - target: {fileID: 7300588653038504135, guid: c3a6188ce52947e4a9f9acfb16f50e00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1324,18 +1308,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube_Down
       objectReference: {fileID: 0}
-    - target: {fileID: 981276220088808542, guid: 878c1901e422165459a81467ca48845f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141268785382370562, guid: 878c1901e422165459a81467ca48845f, type: 3}
-      propertyPath: mainCam
-      value: 
-      objectReference: {fileID: 963194228}
-    - target: {fileID: 7141268785382370562, guid: 878c1901e422165459a81467ca48845f, type: 3}
-      propertyPath: disLimit
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1498,14 +1470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5208cb365a8afe0439cd766248581736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSO: {fileID: 11400000, guid: e20633cac4f5e3b409cd9274defb3769, type: 2}
-  arrowUpPrefab: {fileID: 5086471935343500708, guid: ff7a9c6fb746132409ac739acbdc5e74, type: 3}
-  arrowDownPrefab: {fileID: 981276220088808542, guid: 878c1901e422165459a81467ca48845f, type: 3}
-  arrowLeftPrefab: {fileID: 1739385824008635172, guid: c3a6188ce52947e4a9f9acfb16f50e00, type: 3}
-  arrowRightPrefab: {fileID: 6359553888948511259, guid: a5855a5a873f17e429113926002d26a6, type: 3}
-  numberPrefab: {fileID: 0}
-  gearPrefab: {fileID: 0}
-  cellSize: 1.05
+  levelSO: {fileID: 11400000, guid: 2c254ed746f67cf48a9fb8e28967a61f, type: 2}
+  cellSize: 1.1
 --- !u!1001 &1910964954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1558,14 +1524,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube_Up
       objectReference: {fileID: 0}
-    - target: {fileID: 5086471935343500708, guid: ff7a9c6fb746132409ac739acbdc5e74, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676323460853226992, guid: ff7a9c6fb746132409ac739acbdc5e74, type: 3}
-      propertyPath: mainCam
-      value: 
-      objectReference: {fileID: 963194228}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

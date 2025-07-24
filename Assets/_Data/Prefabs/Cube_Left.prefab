@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeCtrl: {fileID: 2841195831820105956}
-  rayDistance: 0.2
+  rayDistance: 0.1
   ShootPoint: {fileID: 7642521126320915071}
 --- !u!1 &5009456771833958650
 GameObject:
@@ -517,7 +517,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.6, z: 1}
+  m_Size: {x: 1.1, y: 0.6, z: 1.1}
   m_Center: {x: 0, y: -0.3, z: 0}
 --- !u!114 &8491498485659221437
 MonoBehaviour:

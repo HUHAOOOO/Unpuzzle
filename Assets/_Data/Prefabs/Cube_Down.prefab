@@ -85,7 +85,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.6, z: 1}
+  m_Size: {x: 1.1, y: 0.6, z: 1.1}
   m_Center: {x: 0, y: -0.3, z: 0}
 --- !u!114 &6630212606462928136
 MonoBehaviour:
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeCtrl: {fileID: 2180387291549237666}
-  rayDistance: 0.2
+  rayDistance: 0.1
   ShootPoint: {fileID: 5318934829971487772}
 --- !u!1 &3132794130769232479
 GameObject:
