@@ -4,9 +4,9 @@ public class LevelLoader : MonoBehaviour
 {
     public LevelSO levelSO;
 
-    public GameObject arrowUpPrefab, arrowDownPrefab, arrowLeftPrefab, arrowRightPrefab;
-    public GameObject numberPrefab, gearPrefab;
-    public float cellSize = 1f;
+    //public GameObject arrowUpPrefab, arrowDownPrefab, arrowLeftPrefab, arrowRightPrefab;
+    //public GameObject numberPrefab, gearPrefab;
+    public float cellSize = 1.05f;
 
     void Start()
     {
@@ -21,15 +21,19 @@ public class LevelLoader : MonoBehaviour
     }
     void GenerateLevel()
     {
+        // duyet tung hang 
         for (int y = 0; y < levelSO.height; y++)
         {
+            // duyet tung cot 
             for (int x = 0; x < levelSO.width; x++)
             {
-                CubeSO dataCubeSO = levelSO.GetCubeAt(x, y);
+                CubeSO dataCubeSO = levelSO.GetCubeAt(x, y);// lay cac cube theo index List > Array[,]
                 if (dataCubeSO == null || dataCubeSO.cubeType == CubeType.None) continue;
 
-                Vector3 pos = new Vector3(x * cellSize, 0, y * cellSize);
-                Debug.Log("pos : [" + x + "," + y + "] = " + pos);
+                //Vector3 pos = new Vector3(x * cellSize, 0, y * cellSize);
+                Vector3 pos = new Vector3(y * cellSize, 0,x * cellSize);
+                Debug.Log("==== pos : [" + y + "," + x + "] = " + pos);
+                //Debug.Log("==== pos : [" + x + "," + y + "] = " + pos);
                 GameObject obj = null;
 
                 GameObject cubePrefab = dataCubeSO.cubePrefab;

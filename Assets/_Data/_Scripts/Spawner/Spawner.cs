@@ -127,9 +127,12 @@ public abstract class Spawner : CoreMonoBehaviour
     public virtual GameObject Spawn(GameObject prefab, Vector3 spawnPos, Quaternion rotation)
     {
         GameObject newPrefab = this.GetObjectFromPool(prefab);
-        newPrefab.transform.SetPositionAndRotation(spawnPos, rotation);
-
         newPrefab.transform.SetParent(this.holder);
+        //newPrefab.transform.SetPositionAndRotation(spawnPos, rotation);
+        newPrefab.transform.localPosition = spawnPos;
+        newPrefab.transform.localRotation = rotation;
+        Debug.Log(spawnPos + " localPosition : " + newPrefab.transform.localPosition);
+        Debug.Log(rotation + " localRotation : " + newPrefab.transform.localRotation);
         this.spawnedCount++;
 
         //newPrefab.SetActive(true);
