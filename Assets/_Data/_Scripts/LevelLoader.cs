@@ -10,17 +10,18 @@ public class LevelLoader : MonoBehaviour
 
     void Start()
     {
-        GenerateLevel();
+        //GenerateLevel(levelSO);
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GenerateLevel();
+            GenerateLevel(levelSO);
         }
     }
-    void GenerateLevel()
+    public void GenerateLevel(LevelSO newLevelSO)
     {
+        levelSO = newLevelSO;
         // duyet tung hang 
         for (int hang = 0; hang < levelSO.height; hang++)
         {
@@ -56,7 +57,6 @@ public class LevelLoader : MonoBehaviour
                 //obj = Instantiate(cubePrefab, pos, cubePrefab.transform.rotation);
                 obj = CubeSpawner.Instance.Spawn(cubePrefab, pos, cubePrefab.transform.rotation);
                 obj.gameObject.SetActive(true);
-                // setactive ko 
 
                 //if (obj != null) obj.transform.parent = this.transform;
             }
