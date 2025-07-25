@@ -22,25 +22,24 @@ public class LevelLoader : MonoBehaviour
     void GenerateLevel()
     {
         // duyet tung hang 
-        for (int y = 0; y < levelSO.height; y++)
+        for (int hang = 0; hang < levelSO.height; hang++)
         {
             // duyet tung cot 
-            for (int x = 0; x < levelSO.width; x++)
+            for (int cot = 0; cot < levelSO.width; cot++)
             {
-                CubeSO dataCubeSO = levelSO.GetCubeAt(x, y);// lay cac cube theo index List > Array[,]
+                CubeSO dataCubeSO = levelSO.GetCubeAt(cot, hang);// lay cac cube theo index List > Array[,]
                 if (dataCubeSO == null || dataCubeSO.cubeType == CubeType.None) continue;
 
-                //Vector3 pos = new Vector3(x * cellSize, 0, y * cellSize);
-                Vector3 pos = new Vector3(y * cellSize, 0,x * cellSize);
-                Debug.Log("==== pos : [" + y + "," + x + "] = " + pos);
-                //Debug.Log("==== pos : [" + x + "," + y + "] = " + pos);
+                Vector3 pos = new Vector3(hang * cellSize, 0,cot * cellSize);//y hang , x cot : (0,0) (0,1)
+                Debug.Log("==== pos : [" + hang + "," + cot + "] = " + pos);
+                ////Vector3 pos = new Vector3(x * cellSize, 0, y * cellSize);
+                ////Debug.Log("==== pos : [" + x + "," + y + "] = " + pos);
                 GameObject obj = null;
 
                 GameObject cubePrefab = dataCubeSO.cubePrefab;
                 //switch (dataCubeSO.cubeType)
                 //{
-                //    // [ ] todo 
-                //    // arrowUpPrefab : cac Prefab co the lay tu CubeSO
+                
 
                 //    case CubeType.ArrowUp: obj = Instantiate(cubePrefab, pos, cubePrefab.transform.rotation); break;
                 //    case CubeType.ArrowDown: obj = Instantiate(arrowDownPrefab, pos, arrowDownPrefab.transform.rotation); break;

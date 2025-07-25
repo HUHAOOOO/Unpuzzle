@@ -61,8 +61,9 @@ public class LevelSO : ScriptableObject
     public CubeSO GetCubeAt(int x, int y)
     {
         if (x < 0 || y < 0 || x >= width || y >= height) return null;
-        Debug.Log($"GetCubeAt(HANG : {y}, COT : {x}) -> index in List: {y * width + x} \n name : {gridData[y * width + x].name}");
-        //Debug.Log($"gridData[y * width + x] : " + gridData[y * width + x].name);
+        if(gridData[y * width + x] == null) return null;
+        //Debug.Log($"GetCubeAt(HANG : {y}, COT : {x}) -> index in List: {y * width + x} \n name : {gridData[y * width + x].name}");
+        ////Debug.Log($"gridData[y * width + x] : " + gridData[y * width + x].name);
         return gridData[y * width + x];//y * do rong + x(de dich xuong) | [ ] Hieu /co ban no la list mo ta 1 Array
     }
 
@@ -75,18 +76,19 @@ public class LevelSO : ScriptableObject
         if (gridData == null)
             gridData = new List<CubeSO>(targetSize);
 
-        // thieu thi them 
+        // Thieu thi them 
         while (gridData.Count < targetSize)
             gridData.Add(null);
 
-        // Du xoa 
+        // Du thi xoa 
         while (gridData.Count > targetSize)
             gridData.RemoveAt(gridData.Count - 1);
 
-        for(int i=0; i < gridData.Count; i++)
-        {
-            Debug.Log($"gridData[{i}] : {gridData[i].name}");
-        }
+        //for(int i=0; i < gridData.Count; i++)
+        //{
+        //    if(gridData[i] == null) continue;
+        //    Debug.Log($"gridData[{i}] : {gridData[i].name}");
+        //}
 
     }
 

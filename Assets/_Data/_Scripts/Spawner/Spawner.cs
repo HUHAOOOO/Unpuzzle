@@ -128,11 +128,11 @@ public abstract class Spawner : CoreMonoBehaviour
     {
         GameObject newPrefab = this.GetObjectFromPool(prefab);
         newPrefab.transform.SetParent(this.holder);
-        //newPrefab.transform.SetPositionAndRotation(spawnPos, rotation);
-        newPrefab.transform.localPosition = spawnPos;
-        newPrefab.transform.localRotation = rotation;
-        Debug.Log(spawnPos + " localPosition : " + newPrefab.transform.localPosition);
-        Debug.Log(rotation + " localRotation : " + newPrefab.transform.localRotation);
+        newPrefab.transform.SetPositionAndRotation(spawnPos, rotation);
+        //newPrefab.transform.localPosition = spawnPos;
+        //newPrefab.transform.localRotation = rotation;
+        //Debug.Log(spawnPos + " localPosition : " + newPrefab.transform.localPosition);
+        //Debug.Log(rotation + " localRotation : " + newPrefab.transform.localRotation);
         this.spawnedCount++;
 
         //newPrefab.SetActive(true);

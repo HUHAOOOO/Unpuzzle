@@ -275,7 +275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7300588653038504135
 Transform:
   m_ObjectHideFlags: 0
@@ -475,7 +475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2111481962179100996}
   - component: {fileID: 4462599938341159175}
-  - component: {fileID: 8491498485659221437}
+  - component: {fileID: 6947943393036192679}
   m_Layer: 0
   m_Name: TriggerCube
   m_TagString: Untagged
@@ -519,14 +519,14 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1, y: 0.6, z: 1.1}
   m_Center: {x: 0, y: -0.3, z: 0}
---- !u!114 &8491498485659221437
+--- !u!114 &6947943393036192679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5009456771833958650}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c08de7dac8cc914fb66fa12682d709a, type: 3}
   m_Name: 

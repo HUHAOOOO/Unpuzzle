@@ -27,7 +27,8 @@ public class ShootRaycastForward : CoreMonoBehaviour
         ShootPoint = transform.Find("ShootPoint").GetComponent<Transform>();
         Debug.LogWarning(transform.name + ": LoadShootPoint", gameObject);
     }
-    void FixedUpdate()
+    //void FixedUpdate()
+    void Update()
     {
         RayCheckToStop();
         //// An chuot trai

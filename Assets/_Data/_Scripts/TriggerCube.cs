@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TriggerCube : CoreMonoBehaviour , IInteractable
+public class TriggerCube : CoreMonoBehaviour,IInteractable
 {
     [SerializeField] protected CubeCtrl cubeCtrl;
 
