@@ -52,6 +52,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Level_", menuName = "SO/LevelSO")]
 public class LevelSO : ScriptableObject
 {
+    public int moves;
     public int width;
     public int height;
 

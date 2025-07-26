@@ -7,6 +7,7 @@ public class TriggerCube : CoreMonoBehaviour,IInteractable
     public void OnInteract()
     {
         Debug.Log("Object was interacted with!");
+        GameManager.Instance.MovesCount -= 1;
         cubeCtrl.ShootRaycastForward.ShootRay();
     }
 

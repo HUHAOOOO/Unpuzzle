@@ -99,6 +99,7 @@ public class LevelSOEditor : Editor
     {
         LevelSO levelSO = (LevelSO)target;
 
+        levelSO.moves = EditorGUILayout.IntField("Moves", levelSO.moves);
         levelSO.width = EditorGUILayout.IntField("Width", levelSO.width);
         levelSO.height = EditorGUILayout.IntField("Height", levelSO.height);
 
@@ -115,7 +116,7 @@ public class LevelSOEditor : Editor
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Grid Preview", EditorStyles.boldLabel);
 
-        float iconSize = 64f;
+        float iconSize = 32f;//64f;
 
         for (int y = 0; y < levelSO.height; y++)
         {

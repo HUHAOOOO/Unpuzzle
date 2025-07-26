@@ -29,6 +29,7 @@ public class DespawnByDistance : Despawn
     }
     public override void DespawnObject()
     {
+        //LevelManager.Instance.CubeCount -= 1;
         CubeSpawner.Instance.Despawn(this.transform.parent.gameObject);
     }
 }

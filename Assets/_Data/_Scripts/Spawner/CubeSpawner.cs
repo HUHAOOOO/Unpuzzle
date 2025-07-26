@@ -13,4 +13,16 @@ public class CubeSpawner : Spawner
         if (CubeSpawner.instance != null) Debug.LogError("Only 1 CubeSpawner  allow to exist");
         CubeSpawner.instance = this;
     }
+
+    public override void Despawn(GameObject obj)
+    {
+        base.Despawn(obj);
+
+        LevelManager.Instance.CubeCount -= 1;
+        GameManager.Instance.MonkeyCount += 1;
+    }
+    public void DespawnCube_Gear(GameObject obj)
+    {
+        base.Despawn(obj);
+    }
 }
