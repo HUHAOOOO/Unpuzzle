@@ -4,14 +4,21 @@ public class ClickOrTouchHandler : MonoBehaviour
 {
     void Update()
     {
-        // PC
-        if (Application.isEditor || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.OSXPlayer)
+
+        // Chuot (PC + WebGL)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                HandleClickOrTouch(Input.mousePosition);
-            }
+            HandleClickOrTouch(Input.mousePosition);
         }
+
+        //// PC
+        //if (Application.isEditor || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.OSXPlayer)
+        //{
+        //    if (Input.GetMouseButtonDown(0))
+        //    {
+        //        HandleClickOrTouch(Input.mousePosition);
+        //    }
+        //}
 
         // Mobile
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
