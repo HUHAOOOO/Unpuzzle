@@ -7,13 +7,9 @@ public class GameManager : CoreMonoBehaviour
 
     [SerializeField] private int monkeyCount;
     [SerializeField] private int movesCount;
-    [SerializeField] private bool isGameOver;
+    //[SerializeField] private bool isGameOver;
 
     public event EventHandler OnGameOver;
-
-    // [ ] Su kien game over
-    // 1 ko the choi nx KO ban raycast dc 
-    // 2 bat UI Failed 
 
     public int MonkeyCount
     {
@@ -36,7 +32,7 @@ public class GameManager : CoreMonoBehaviour
         if (movesCount <= 0)
         {
             Debug.Log("THUA ROI");
-            isGameOver = true;
+            //isGameOver = true;
             OnGameOver?.Invoke(this, EventArgs.Empty);
         }
     }

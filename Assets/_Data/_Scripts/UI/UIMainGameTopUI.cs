@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class UIMainGameTopUI : CoreMonoBehaviour
 {
+    [SerializeField] private UIMainGame uiMainGame;
+
     [SerializeField] private Button pauseMenuBtn;
 
     [SerializeField] private TextMeshProUGUI moneyText;
@@ -21,9 +23,18 @@ public class UIMainGameTopUI : CoreMonoBehaviour
     protected override void LoadComponents()
     {
         base.LoadComponents();
+        LoadUIMainGame();
+
         LoadPauseMenuBtn();
         LoadLevelText();
         LoadMovesText();
+    }
+
+    protected virtual void LoadUIMainGame()
+    {
+        if (this.uiMainGame != null) return;
+        uiMainGame = transform.parent.GetComponent<UIMainGame>();
+        Debug.LogWarning(transform.name + ": LoadUIMainGame", gameObject);
     }
 
     protected virtual void LoadPauseMenuBtn()
@@ -45,7 +56,10 @@ public class UIMainGameTopUI : CoreMonoBehaviour
         Debug.LogWarning(transform.name + ": LoadMovesText", gameObject);
     }
 
-
+    protected override void Start()
+    {
+        pauseMenuBtn.onClick.AddListener(() => { uiMainGame.UIManager.SetActiveTrue_PauseMenu(); });
+    }
     private void Update()
     {
         moneyText.text = "$ " + GameManager.Instance.MonkeyCount.ToString();

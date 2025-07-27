@@ -6,6 +6,6 @@ public class CubeSO : ScriptableObject
     public CubeType cubeType;
     public GameObject cubePrefab;
     public Sprite cubeSprite;
+    public int numberValue;
 
-    //public int numberValue;//block number
 }

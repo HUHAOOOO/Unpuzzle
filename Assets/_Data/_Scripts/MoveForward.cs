@@ -44,5 +44,8 @@ public class MoveForward : CoreMonoBehaviour
     {
         // forward Z
         cubeCtrl.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+        if (cubeCtrl.transform.parent.GetComponent<CubeNumberCtrl>() != null)
+            cubeCtrl.transform.parent?.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }

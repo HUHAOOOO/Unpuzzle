@@ -3,14 +3,32 @@ using UnityEngine;
 
 public class UIMainGame : CoreMonoBehaviour
 {
+    [SerializeField] private UIManager uiManager;
+
     [SerializeField] private UIMainGameBottomUI uiMainGameBottomUI;
     [SerializeField] private UIMainGameTopUI uiMainGameTopUI;
+
+
+    public UIManager UIManager
+    {
+        get => uiManager; 
+        set => uiManager = value;
+    }
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
+        LoadUIManager();
+
         LoadUIMainGameBottomUI();
         LoadUIMainGameTopUI();
+    }
+
+    protected virtual void LoadUIManager()
+    {
+        if (this.uiManager != null) return;
+        uiManager = transform.parent.GetComponent<UIManager>();
+        Debug.LogWarning(transform.name + ": LoadUIManager", gameObject);
     }
 
     protected virtual void LoadUIMainGameBottomUI()
