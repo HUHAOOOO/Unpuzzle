@@ -41,11 +41,11 @@ public class LevelManager : CoreMonoBehaviour
         LoadLevelLoader();
         LoadListLevelSO();
     }
-    protected override void ResetValue()
-    {
-        base.ResetValue();
-        SetLevel(listLevelSO[0]);
-    }
+    //protected override void ResetValue()
+    //{
+    //    base.ResetValue();
+    //    SetLevel(listLevelSO[0]);
+    //}
 
     protected virtual void LoadLevelLoader()
     {
@@ -117,7 +117,7 @@ public class LevelManager : CoreMonoBehaviour
     public void SetAgaintLevel()
     {
         SetLevel(currentLevelSO);
-        //OnNextLevel?.Invoke(this, EventArgs.Empty);
+        OnNextLevel?.Invoke(this, EventArgs.Empty);// [ ] todo
     }
     private void SetLevel(LevelSO updateCurrentLevelSO)
     {
@@ -138,12 +138,12 @@ public class LevelManager : CoreMonoBehaviour
         level += 1;
         Debug.Log(level);
 
-        if (listLevelSO.Count == level)
+        if (listLevelSO.Count != level)
         {
-            nextLevelSO = listLevelSO[0];
+            nextLevelSO = listLevelSO[level];
         }
         else
-            nextLevelSO = listLevelSO[level];
+            nextLevelSO = listLevelSO[0];
     }
 
     /// <summary>

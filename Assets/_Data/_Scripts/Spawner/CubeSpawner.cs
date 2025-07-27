@@ -25,4 +25,8 @@ public class CubeSpawner : Spawner
     {
         base.Despawn(obj);
     }
+    public void DespawnGO(GameObject obj)
+    {
+        base.Despawn(obj);
+    }
 }

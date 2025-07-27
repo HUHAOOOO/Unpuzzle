@@ -29,6 +29,7 @@ public class LevelLoader : CoreMonoBehaviour
     protected override void Start()
     {
         LevelManager.Instance.OnWinLevel += LevelManager_OnWinLevel;
+        GameManager.Instance.OnGameOver += GameManager_OnGameOver;
     }
     void Update()
     {
@@ -110,6 +111,16 @@ public class LevelLoader : CoreMonoBehaviour
             if (obj.name == "Cube_Gear")
                 //CubeSpawner.Instance.Despawn(obj);
                 CubeSpawner.Instance.DespawnCube_Gear(obj);
+        }
+        listCurrentCubeInLevel.Clear();
+    }
+    private void GameManager_OnGameOver(object sender, System.EventArgs e)
+    {
+        cubeCount = 0;
+        levelSO = null;
+        foreach (GameObject obj in listCurrentCubeInLevel)
+        {
+            CubeSpawner.Instance.DespawnGO(obj);
         }
         listCurrentCubeInLevel.Clear();
     }

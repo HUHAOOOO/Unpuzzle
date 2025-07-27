@@ -97,6 +97,8 @@ public class LevelSOEditor : Editor
 {
     public override void OnInspectorGUI()
     {
+        serializedObject.Update();
+
         LevelSO levelSO = (LevelSO)target;
 
         levelSO.moves = EditorGUILayout.IntField("Moves", levelSO.moves);
@@ -157,6 +159,8 @@ public class LevelSOEditor : Editor
 
         if (GUI.changed)
             EditorUtility.SetDirty(levelSO);
+
+        serializedObject.ApplyModifiedProperties();
     }
 }
 #endif

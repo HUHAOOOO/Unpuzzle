@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : CoreMonoBehaviour
@@ -7,6 +8,8 @@ public class GameManager : CoreMonoBehaviour
     [SerializeField] private int monkeyCount;
     [SerializeField] private int movesCount;
     [SerializeField] private bool isGameOver;
+
+    public event EventHandler OnGameOver;
 
     // [ ] Su kien game over
     // 1 ko the choi nx KO ban raycast dc 
@@ -34,6 +37,7 @@ public class GameManager : CoreMonoBehaviour
         {
             Debug.Log("THUA ROI");
             isGameOver = true;
+            OnGameOver?.Invoke(this, EventArgs.Empty);
         }
     }
 

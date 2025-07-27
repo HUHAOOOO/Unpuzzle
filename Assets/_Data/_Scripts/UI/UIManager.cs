@@ -38,6 +38,7 @@ public class UIManager : CoreMonoBehaviour
     {
         LevelManager.Instance.OnWinLevel += LevelManager_OnWinLevel;
         LevelManager.Instance.OnNextLevel += LevelManager_OnNextLevel;
+        GameManager.Instance.OnGameOver += GameManager_OnGameOver;
 
         uiWinLevel.gameObject.SetActive(false);
         uiFailedLevel.gameObject.SetActive(false);
@@ -50,5 +51,10 @@ public class UIManager : CoreMonoBehaviour
     private void LevelManager_OnNextLevel(object sender, System.EventArgs e)
     {
         uiMainGame.gameObject.SetActive(true);
+    }
+    private void GameManager_OnGameOver(object sender, System.EventArgs e)
+    {
+        uiMainGame.gameObject.SetActive(false);
+        uiFailedLevel.gameObject.SetActive(true);
     }
 }
